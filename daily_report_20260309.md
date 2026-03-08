@@ -1,5 +1,7 @@
 # 四大板块每日研报（2026-03-09）
 
+---
+
 ## ☕ 咖啡机器人
 
 ### 最新融资/动态
@@ -12,8 +14,8 @@
 ### 主要企业
 | 公司 | 特点 | 官网 |
 |------|------|------|
-| 上海氦豚COFE+ | 全球领先，第6代产品 | http://www.cofeplus.com/ |
-| 北京影智XBOT | 科大讯飞投资，600+台交付 | https://xbot.inspace.cc/ |
+| 上海氦豚COFE+ | 全球领先，第6代产品 | [cofeplus.com](http://www.cofeplus.com/) |
+| 北京影智XBOT | 科大讯飞投资，600+台交付 | [xbot.inspace.cc](https://xbot.inspace.cc/) |
 | 咖爷科技 | 高瓴投资 | - |
 
 ---
@@ -41,8 +43,10 @@
 | 睿尔曼智能 | 近5亿元 | 2026-03-05 | [腾讯新闻](https://news.qq.com/rain/a/20260305A06ORX00) |
 
 ### 上市动态
-- **越疆科技**：港股"协作机器人第一股"，已启动A股上市计划
-- **节卡机器人**：科创板IPO进行中
+| 公司 | 动态 | 来源 |
+|------|------|------|
+| 越疆科技 | 港股"协作机器人第一股"，已启动A股上市计划 | [新浪财经](https://finance.sina.com.cn/roll/2026-01-04/doc-inhfcxwn7410206.shtml) |
+| 节卡机器人 | 科创板IPO进行中 | [36氪](https://m.36kr.com/p/3112069878681353) |
 
 ### 协作机器人三杰
 | 公司 | 地位 | 特点 |
@@ -56,34 +60,43 @@
 ## 🤖 具身智能
 
 ### 重大融资（过去2周）
-| 公司 | 融资金额 | 日期 | 亮点 |
+| 公司 | 融资金额 | 日期 | 来源 |
 |------|----------|------|------|
-| **银河通用** | 25亿元 | 2026-03-02 | 刷新国内具身智能单轮融资纪录 |
-| **松延动力** | 10亿元B轮 | 2026-03-02 | 同日完成 |
-| **星动纪元** | 10亿元 | 2026-03-05 | 估值超100亿，清华系 |
+| **银河通用** | 25亿元 | 2026-03-02 | [腾讯新闻](https://news.qq.com/rain/a/20260307A02FJ000) |
+| **松延动力** | 10亿元B轮 | 2026-03-02 | [OFweek机器人网](https://robot.ofweek.com/2026-03/ART-8321200-8420-30682319.html) |
+| **星动纪元** | 10亿元 | 2026-03-05 | [同花顺财经](https://news.10jqka.com.cn/20260305/c675102774.shtml) |
 
 > **2026年每天至少5亿元砸向具身智能！**
+> 
+> 来源：[36氪](https://eu.36kr.com/zh/p/3711388372201858)
 
 ### GitHub开源项目
 | 项目 | 描述 | 链接 |
 |------|------|------|
-| **Rofunc** | 机器人示教与操作Python库 | [GitHub](https://github.com/Skylark0924/Rofunc) |
-| **awesome-agent** | Agent与机器人论文集 | [GitHub](https://github.com/weleen/awesome-agent) |
-| **RoboOmni** | Omni-modal机器人操作 | [GitHub](https://github.com/OpenMOSS/RoboOmni) |
-| **EmbodiedBrain** | 具身智能大脑模型(ZTE) | [GitHub](https://github.com/ZTERobot/EmbodiedBrain1.0/) |
-| **RL-Arm-Manipulation** | 深度强化学习机械臂 | [GitHub](https://github.com/Robotics-lessons/RL-Arm-Manipulation-Project) |
+| Rofunc | 机器人示教与操作Python库 | [GitHub](https://github.com/Skylark0924/Rofunc) |
+| awesome-agent | Agent与机器人论文集 | [GitHub](https://github.com/weleen/awesome-agent) |
+| RoboOmni | Omni-modal机器人操作 | [GitHub](https://github.com/OpenMOSS/RoboOmni) |
+| EmbodiedBrain | 具身智能大脑模型(ZTE) | [GitHub](https://github.com/ZTERobot/EmbodiedBrain1.0/) |
+| RL-Arm-Manipulation | 深度强化学习机械臂 | [GitHub](https://github.com/Robotics-lessons/RL-Arm-Manipulation-Project) |
+| Robotics-RL-FMs-Integration | 强化学习与机器人融合论文集 | [GitHub](https://github.com/clmoro/Robotics-RL-FMs-Integration) |
 
 ### 顶刊论文
-| 论文 | 发表地 | 要点 |
-|------|--------|------|
-| Embodied large language models | Nature Machine Intelligence | GPT-4驱动的机器人框架ELLMER |
-| RobotxR1 | arXiv:2505.03238 | 闭环强化学习赋能具身智能 |
-| Learning Mobile Manipulation | MDPI Robots | 深度强化学习移动操作 |
-| Robotic Manipulation | MIT CSail | 机器人操作课程笔记 |
+| 论文 | 发表地 | 要点 | 链接 |
+|------|--------|------|------|
+| Embodied large language models | Nature Machine Intelligence | GPT-4驱动的机器人框架ELLMER | [Nature](https://www.nature.com/articles/s42256-025-01005-x) |
+| RobotxR1 | arXiv:2505.03238 | 闭环强化学习赋能具身智能 | [arXiv](https://arxiv.org/abs/2505.03238) |
+| Learning Mobile Manipulation | MDPI Robots | 深度强化学习移动操作 | [MDPI](https://www.mdpi.com/1424-8220/20/3/939) |
+| Robotic Manipulation | MIT CSAIL | 机器人操作课程笔记 | [MIT](https://manipulation.csail.mit.edu/) |
 
 ### 行业会议
-- **Embodied Intelligence Conference 2026**：2026年3月18-20日线上举行
-- 北京智源大会：具身智能列为2025十大AI趋势
+| 会议 | 时间 | 链接 |
+|------|------|------|
+| Embodied Intelligence Conference 2026 | 2026年3月18-20日 | [官网](https://embodied-intelligence.org/) |
+
+### 技术趋势
+- VLA（视觉-语言-动作）大模型成为主流
+- 扩散模型应用于机器人动作生成
+- 清华RDT模型实现零样本指令执行
 
 ---
 
