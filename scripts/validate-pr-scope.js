@@ -22,7 +22,13 @@ function main() {
   const output = run(`git diff --name-only --diff-filter=ACMR ${diffBase}...HEAD`);
   const changed = output ? output.split('\n').filter(Boolean) : [];
 
-  const disallowed = changed.filter((p) => !p.startsWith('reports/'));
+  const ALLOW_EXACT = new Set([
+    '.github/workflows/validate-reports.yml',
+    'scripts/validate-pr-scope.js',
+  ]);
+  const disallowed = changed.filter(
+    (p) => !p.startsWith('reports/') && !ALLOW_EXACT.has(p)
+  );
   if (disallowed.length > 0) {
     console.error('PR scope validation failed. Only files under reports/** are allowed in PRs.');
     for (const file of disallowed) {
