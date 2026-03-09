@@ -1,0 +1,94 @@
+name: Auto-merge Maxclaw PRs
+
+on:
+  workflow_run:
+    workflows: ["Validate reports quality"]
+    types: [completed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    if: >
+      ${{
+        github.event.workflow_run.conclusion == 'success' &&
+        github.event.workflow_run.event == 'pull_request' &&
+        startsWith(github.event.workflow_run.head_branch, 'maxclaw/')
+      }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge eligible PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const run = context.payload.workflow_run;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            const prs = run.pull_requests || [];
+            if (prs.length === 0) {
+              core.setFailed('No pull request associated with this workflow_run.');
+              return;
+            }
+
+            const prNumber = prs[0].number;
+            const { data: pr } = await github.rest.pulls.get({
+              owner,
+              repo,
+              pull_number: prNumber,
+            });
+
+            if (pr.state !== 'open') {
+              core.info(`PR #${prNumber} is not open, skip.`);
+              return;
+            }
+            if (pr.draft) {
+              core.info(`PR #${prNumber} is draft, skip.`);
+              return;
+            }
+            if (pr.base.ref !== 'main') {
+              core.info(`PR #${prNumber} base is ${pr.base.ref}, skip.`);
+              return;
+            }
+            if (!pr.head.ref.startsWith('maxclaw/')) {
+              core.info(`PR #${prNumber} head is ${pr.head.ref}, skip.`);
+              return;
+            }
+
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              owner,
+              repo,
+              pull_number: prNumber,
+              per_page: 100,
+            });
+            const disallowed = files
+              .map((f) => f.filename)
+              .filter((name) => !name.startsWith('reports/'));
+
+            if (disallowed.length > 0) {
+              core.setFailed(
+                `PR #${prNumber} modifies files outside reports/**: ${disallowed.join(', ')}`
+              );
+              return;
+            }
+
+            await github.rest.pulls.merge({
+              owner,
+              repo,
+              pull_number: prNumber,
+              merge_method: 'squash',
+            });
+            core.info(`PR #${prNumber} merged.`);
+
+            try {
+              await github.rest.git.deleteRef({
+                owner,
+                repo,
+                ref: `heads/${pr.head.ref}`,
+              });
+              core.info(`Deleted branch ${pr.head.ref}.`);
+            } catch (error) {
+              core.warning(`Failed to delete branch ${pr.head.ref}: ${error.message}`);
+            }
