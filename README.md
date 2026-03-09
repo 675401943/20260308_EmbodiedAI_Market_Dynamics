@@ -6,21 +6,23 @@
 
 ## 当前协作分工
 
-- Maxclaw：每天上传新的研报 `.md` 文件（建议放到 `reports/`）
+- Maxclaw：每天上传新的研报 `.md` 文件到 `reports/`
 - Codex：维护网页展示、归档逻辑与 GitHub Pages 部署流程
 
 ## 内容更新约定
 
 1. 每日新增研报放到 `reports/` 目录
-2. 文件名建议带日期：`YYYYMMDD_主题.md` 或 `YYYY-MM-DD_主题.md`
-3. 文档第一行用 `# 标题`，用于网页展示标题
+2. 文件名必须带日期：`YYYYMMDD_topic.md` 或 `YYYY-MM-DD_topic.md`
+3. 每个文档必须包含 frontmatter：`title/date/sector/source_count`
+4. 正文需有一级标题，且满足最小质量门槛（见 `reports/README.md`）
 
 ## 自动化流程（CI）
 
 推送到 `main` 后，GitHub Actions 会自动：
 
-1. 执行 `node scripts/generate-manifest.js`
-2. 生成 `reports-manifest.json`
-3. 部署静态站到 GitHub Pages
+1. 执行 `node scripts/validate-reports.js`
+2. 执行 `node scripts/generate-manifest.js`
+3. 生成 `reports-manifest.json`
+4. 部署静态站到 GitHub Pages
 
-因此日常无需手动改网页代码，只传 `.md` 即可自动归档并联动日历。
+`validate` 失败会阻断部署，因此 Maxclaw 只需按模板提交 `.md`。

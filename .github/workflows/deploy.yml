@@ -29,6 +29,9 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Validate reports
+        run: node scripts/validate-reports.js
+
       - name: Generate reports manifest
         run: node scripts/generate-manifest.js
 
