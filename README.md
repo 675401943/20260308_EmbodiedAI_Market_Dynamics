@@ -15,6 +15,7 @@
 2. 文件名必须带日期：`YYYYMMDD_topic.md` 或 `YYYY-MM-DD_topic.md`
 3. 每个文档必须包含 frontmatter：`title/date/sector/source_count`
 4. 正文需有一级标题，且满足最小质量门槛（见 `reports/README.md`）
+5. `sector` 支持四个单板块值以及 `all`（四大板块合并日报）
 
 ## 自动化流程（CI）
 

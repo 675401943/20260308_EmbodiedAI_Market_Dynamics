@@ -26,6 +26,7 @@ source_count: 5
 - `smt_factory`
 - `robotic_arm`
 - `embodied_ai`
+- `all`（四大板块合并日报）
 
 ## 3) 质量门槛（CI 自动校验）
 

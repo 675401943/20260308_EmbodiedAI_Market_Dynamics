@@ -9,6 +9,7 @@ const SECTORS = new Set([
   'smt_factory',
   'robotic_arm',
   'embodied_ai',
+  'all',
 ]);
 
 const DATE_PREFIX_RE = /^((?:19|20)\d{2}[-_]?(?:0[1-9]|1[0-2])[-_]?(?:0[1-9]|[12]\d|3[01]))_.+\.md$/;
