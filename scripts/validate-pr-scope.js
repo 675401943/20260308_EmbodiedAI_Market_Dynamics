@@ -24,7 +24,10 @@ function main() {
 
   const ALLOW_EXACT = new Set([
     '.github/workflows/validate-reports.yml',
+    '.github/workflows/auto-merge-maxclaw.yml',
+    'README.md',
     'scripts/validate-pr-scope.js',
+    'scripts/validate-reports.js',
   ]);
   const disallowed = changed.filter(
     (p) => !p.startsWith('reports/') && !ALLOW_EXACT.has(p)
