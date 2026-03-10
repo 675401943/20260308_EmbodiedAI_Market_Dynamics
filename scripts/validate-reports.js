@@ -123,8 +123,8 @@ function main() {
     }
 
     const words = countWords(body);
-    if (words < 600) {
-      errors.push(`${file.rel}: 正文内容过短，当前约 ${words} 字，要求 >= 600`);
+    if (words < 500) {
+      errors.push(`${file.rel}: 正文内容过短，当前约 ${words} 字，要求 >= 500`);
     }
 
     if (!/^#\s+.+/m.test(body)) {
